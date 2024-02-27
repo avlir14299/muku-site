@@ -1,0 +1,130 @@
+@charset 'utf-8';
+
+@mixin flex($a:center,$j:space-between){
+  display: flex;
+  justify-content: $j;
+  align-items: $a;
+}
+
+//BASE-------------------------------------------------
+
+.inner {
+  max-width: 1000px;
+  min-width: 320px;
+  width: 93.5vw;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+p{
+  font-size:clamp(1rem, 0.818rem + 0.91vw, 1.5rem);
+}
+h1{
+  font-size:clamp(1.5rem, 1.227rem + 1.36vw, 2.25rem);
+}
+a{
+  text-decoration: none;
+}
+
+img{
+  width: 100%;
+  height: 100%;
+}
+
+
+//BLOCK-------------------------------------------------
+
+//INDEX-------------------------------------------------
+
+.blog{
+  &-contents{
+    @include flex();
+    flex-wrap: wrap;
+    padding: 0 1vw;
+
+    .item{
+      width: 32%;
+      margin-bottom: 30px;
+
+      @media (max-width:630px) {
+        width: 46%;
+      }
+      @media (max-width:450px) {
+        width: 100%;
+      }
+
+      figure {
+        margin: 0;
+      }
+
+      figcaption {
+        margin-top: 20px;
+        a {
+          @include flex($a:top);
+        }
+        time {
+          font-size: clamp(0.75rem, 0.705rem + 0.23vw, 0.875rem);
+        }
+        p {
+          font-size: clamp(0.875rem, 0.83rem + 0.23vw, 1rem);
+        }
+      }
+    }
+    li {
+      list-style-type: none;
+    }
+    a{
+      color: black;
+    }
+  }
+
+  &-datail{
+    padding: 60px 0;
+
+    h1{
+      line-height: 1;
+      padding: 5px;
+      border-left: 5px solid red;
+      border-bottom: 2px solid red;
+      margin-bottom: 24px;
+    }
+    p{
+      margin-bottom: 40px;
+    }
+
+    &-content{
+      padding: 60px 0;
+
+      p{
+              line-height: 1.5;
+      }
+
+
+      h2{
+        margin-bottom: 10px;
+      }
+
+      img{
+        margin: 60px 0;
+      }
+
+      ul {
+        padding: 30px;
+        border: 5px solid red;
+      }
+
+      li {
+        margin-bottom: 1rem;
+        &:last-child{
+          margin-bottom: 0;
+        }
+      }
+
+      a {
+        text-decoration: none;
+        color:black;
+      }
+
+    }
+  }
+}
