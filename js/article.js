@@ -1,4 +1,5 @@
 const cmsContents = document.querySelector('.blog-datail');
+console.log("saaa");
 
 const queryString = window.location.search;
 const urlParams = new URLSearchParams(queryString);
